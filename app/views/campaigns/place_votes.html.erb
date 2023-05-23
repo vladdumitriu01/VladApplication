@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Another HTML File</title>
+  <!-- Add your CSS or external stylesheets here -->
+</head>
+<body>
+<h1>List of Objects</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Campaign Name</th>
+    <th>Validity</th>
+    <th>Choice</th>
+    <th>Time of Vote</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @placed_votes.each do |object| %>
+    <tr>
+      <td><%= object.campaign.name %></td>
+      <td><%= object.validity %></td>
+      <td><%= object.choice %></td>
+      <td><%= Time.at(object.time_of_vote).strftime("%Y-%m-%d %H:%M:%S") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

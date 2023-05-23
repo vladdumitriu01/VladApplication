@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campaigns</title>
+  <!-- Add your CSS or external stylesheets here -->
+</head>
+<body>
+<h1>Campaigns</h1>
+<ul>
+  <% @attribute_names.each do |value| %>
+    <li><%= button_to value, campaign_redirect_path(value), method: :get %></li>
+  <% end %>
+</ul>
+</body>
+</html>

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/campaigns', to: 'campaigns#show_campaigns'
+  get '/campaign_redirect/:value', to: 'campaigns#redirect', as: 'campaign_redirect'
 end
