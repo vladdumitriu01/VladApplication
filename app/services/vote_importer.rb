@@ -16,7 +16,7 @@ class VoteImporter
 
       # Create the Vote and associate it with the Campaign
       unless choice == nil or validity != 'during'
-        campaign.place_votes.create(validity: validity, choice: choice, time_of_vote: time_of_vote)
+        campaign.place_votes.find_or_create_by(validity: validity, choice: choice, time_of_vote: time_of_vote)
         votes += 1
       end
     end
